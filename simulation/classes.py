@@ -38,7 +38,7 @@ class Evento(ABC):
         self.valor_reloj = 0
    
 class LlegadaCliente(Evento):
-    def __init__(self, estado="Libre", id_cliente=0,*args, **kwargs):
+    def __init__(self, estado="Esperando Atencion", id_cliente=0,valor_formula=3,*args, **kwargs):
         super().__init__(*args, **kwargs)
         self.estado = estado
         self.id_cliente = id_cliente
@@ -53,7 +53,7 @@ class LlegadaCliente(Evento):
 
     def calc_valor_reloj(self, reloj):
         self.rand = get_rand()
-        self.valor = -3*log(1-self.rand)
+        self.valor = -self.valor_formula*log(1-self.rand)
         self.valor_reloj = reloj + self.valor
 
     def reset(self):
