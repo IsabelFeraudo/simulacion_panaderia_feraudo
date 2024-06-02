@@ -50,12 +50,10 @@ def panaderia_main_func(desde, cantidad_mostrar, total):
                      'acum_clientes': 1,
                      'acum_clientes_abandono': 0,                  
                      'porcentaje_clientes_abandono': 0}
-    #HASTA ACA
-
-    estacionamiento = Estacionamiento(id=1, num_grupo=0, valor_formula=media_est)
-    dicc.update(llegada_parque.to_dict())
-    dicc.update(llegada_grupo.to_dict())
-    dicc.update(estacionamiento.to_dict())
+   
+#este deberia ser evento sub i?
+    fin_atencion= FinAtencion(id=1,estado="Libre", id_cliente=0)
+    dicc.update(llegada_cliente.to_dict())
     dicc.update(dict_metricas)
 
     for i in range(1, 6, 1):
