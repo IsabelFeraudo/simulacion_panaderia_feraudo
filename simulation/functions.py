@@ -56,9 +56,9 @@ def panaderia_main_func(desde, cantidad_mostrar, total):
     dicc.update(llegada_cliente.to_dict())
     dicc.update(dict_metricas)
 
-    for i in range(1, 6, 1):
-        lista_cajas_estacionamiento.append(LlegadaCajaEstacionamiento(id=i, estado="Libre", valor_formula=media_caja_est))
-        dicc.update(lista_cajas_estacionamiento[i-1].to_dict())
+    for i in range(1, 2, 1):
+        lista_panaderos.append(LlegadaCliente(id=i, estado="Libre", valor_formula=3))
+        dicc.update(lista_panaderos[i-1].to_dict())
     for i in range(1, 7, 1):
         lista_cajas_entradas.append(LlegadaCajaCompra(id=i, valor_formula=media_caja_comp))
         dicc.update(lista_cajas_entradas[i-1].to_dict())
